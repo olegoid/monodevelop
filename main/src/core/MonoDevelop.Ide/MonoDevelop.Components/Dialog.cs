@@ -54,8 +54,8 @@ namespace MonoDevelop.Components
 
 			var dialog = GetImplicit<Dialog, Gtk.Dialog>(d) ?? new Dialog (d);
 			d.Destroyed += delegate {
-				GC.SuppressFinalize (this);
-				Dispose (true);
+				GC.SuppressFinalize (dialog);
+				dialog.Dispose (true);
 			};
 			return d;
 		}

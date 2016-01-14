@@ -142,8 +142,8 @@ namespace MonoDevelop.Components
 
 			var control = GetImplicit<Control, Gtk.Widget>(d) ?? new Control (d);
 			d.Destroyed += delegate {
-				GC.SuppressFinalize (this);
-				Dispose (true);
+				GC.SuppressFinalize (control);
+				control.Dispose (true);
 			};
 			return control;
 		}

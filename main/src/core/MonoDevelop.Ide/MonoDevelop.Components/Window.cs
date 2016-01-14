@@ -54,8 +54,8 @@ namespace MonoDevelop.Components
 
 			var window = GetImplicit<Window, Gtk.Window>(d) ?? new Window (d);
 			d.Destroyed += delegate {
-				GC.SuppressFinalize (this);
-				Dispose (true);
+				GC.SuppressFinalize (window);
+				window.Dispose (true);
 			};
 			return window;
 		}
