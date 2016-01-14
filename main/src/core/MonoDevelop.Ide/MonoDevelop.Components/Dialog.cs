@@ -57,7 +57,7 @@ namespace MonoDevelop.Components
 				GC.SuppressFinalize (dialog);
 				dialog.Dispose (true);
 			};
-			return d;
+			return dialog;
 		}
 	}
 }
