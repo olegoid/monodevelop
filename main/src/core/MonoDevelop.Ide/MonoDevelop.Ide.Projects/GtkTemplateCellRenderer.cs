@@ -246,7 +246,7 @@ namespace MonoDevelop.Ide.Projects
 
 		void SetMarkup (Pango.Layout layout, string text)
 		{
-			string markup = "<span size='smaller'>" + text + "</span>";
+			string markup = "<span font=\"11\">" + text + "</span>";
 			layout.SetMarkup (markup);
 		}
 

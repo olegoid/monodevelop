@@ -101,7 +101,7 @@ namespace CBinding.Navigation
 				return;
 			
 			if (!have_ctags) {
-				nodeInfo.Label = string.Format ("{0} <span foreground='red' size='small'>(CTags not installed)</span>", p.Name);
+				nodeInfo.Label = string.Format ("{0} <span font=\"11\" foreground=\"red\">(CTags not installed)</span>", p.Name);
 			}
 		}
 

@@ -196,7 +196,7 @@ namespace MonoDevelop.CSharp
 			// TODO
 			//			if (entity.IsObsolete (out reason)) {
 			//				var attr = reason == null ? "[Obsolete]" : "[Obsolete(\"" + reason + "\")]";
-			//				result = "<span size=\"smaller\">" + attr + "</span>" + Environment.NewLine + result;
+			//				result = "<span font=\"11\"> + attr + "</span>" + Environment.NewLine + result;
 			//			}
 			return result;
 		}
@@ -350,7 +350,7 @@ namespace MonoDevelop.CSharp
 			var color = AlphaBlend (colorStyle.PlainText.Foreground, colorStyle.PlainText.Background, optionalAlpha);
 			var colorString = MonoDevelop.Components.HelperMethods.GetColorString (color);
 
-			result.Append ("<span foreground=\"" + colorString + "\">" + " (type parameter)</span>");
+			result.Append ("<span font=\"11\" foreground=\"" + colorString + "\">" + " (type parameter)</span>");
 			var tp = t as ITypeParameterSymbol;
 			if (tp != null) {
 				if (!tp.HasConstructorConstraint && !tp.HasReferenceTypeConstraint && !tp.HasValueTypeConstraint && tp.ConstraintTypes.All (IsObjectOrValueType))
@@ -949,7 +949,7 @@ namespace MonoDevelop.CSharp
 			var color = AlphaBlend (colorStyle.PlainText.Foreground, colorStyle.PlainText.Background, optionalAlpha);
 			var colorString = MonoDevelop.Components.HelperMethods.GetColorString (color);
 
-			var keywordSign = "<span foreground=\"" + colorString + "\">" + " (keyword)</span>";
+			var keywordSign = "<span font=\"11\" foreground=\"" + colorString + "\">" + " (keyword)</span>";
 
 			switch (node.Kind ()) {
 			case SyntaxKind.AbstractKeyword:
@@ -1490,7 +1490,7 @@ namespace MonoDevelop.CSharp
 			var color = AlphaBlend (colorStyle.PlainText.Foreground, colorStyle.PlainText.Background, optionalAlpha);
 			var colorString = MonoDevelop.Components.HelperMethods.GetColorString (color);
 
-			var keywordSign = "<span foreground=\"" + colorString + "\">" + " (keyword)</span>";
+			var keywordSign = "<span font=\"11\" foreground=\"" + colorString + "\">" + " (keyword)</span>";
 
 			result.SignatureMarkup = Highlight (keyword.ToFullString (), colorStyle.KeywordTypes) + keywordSign;
 
@@ -1588,7 +1588,7 @@ namespace MonoDevelop.CSharp
 					GrayOut = true;
 					var color = AlphaBlend (colorStyle.Default.Color, colorStyle.Default.BackgroundColor, optionalAlpha);
 					var colorString = Mono.TextEditor.HelperMethods.GetColorString (color);
-					result.Append ("<span foreground=\"" + colorString + "\">");
+					result.Append ("<span font=\"11\" foreground=\"" + colorString + "\">");
 				}*/
 				AppendParameter (result, parameter);
 				if (parameter.IsOptional) {
@@ -1798,7 +1798,7 @@ namespace MonoDevelop.CSharp
 			}
 
 			var colorString = MonoDevelop.Components.HelperMethods.GetColorString (color);
-			return "<span foreground=\"" + colorString + "\">" + str + "</span>";
+			return "<span font=\"11\" foreground=\"" + colorString + "\">" + str + "</span>";
 		}
 
 		string HighlightSemantically (string str, ChunkStyle style)
@@ -1820,13 +1820,13 @@ namespace MonoDevelop.CSharp
 									 //						var relPath = FileService.AbsoluteToRelativePath (project.BaseDirectory, loc.SourceTree.FilePath);
 									 //						var line = loc.SourceTree.GetLineSpan (loc.SourceSpan, true).StartLinePosition.Line;
 									 //						
-									 //						return (type.ContainingNamespace.IsGlobalNamespace ? "" : "<small>" + GettextCatalog.GetString ("Namespace:\t{0}", AmbienceService.EscapeText (type.ContainingNamespace.Name)) + "</small>" + Environment.NewLine) +
-									 //							"<small>" + GettextCatalog.GetString ("Project:\t{0}", AmbienceService.EscapeText (type.ContainingAssembly.Name)) + "</small>" + Environment.NewLine +
-									 //							"<small>" + GettextCatalog.GetString ("File:\t\t{0} (line {1})", AmbienceService.EscapeText (relPath), line) + "</small>";
+									 //						return (type.ContainingNamespace.IsGlobalNamespace ? "" : "<span font=\"11\">" + GettextCatalog.GetString ("Namespace:\t{0}", AmbienceService.EscapeText (type.ContainingNamespace.Name)) + "</span>" + Environment.NewLine) +
+									 //							"<span font=\"11\">" + GettextCatalog.GetString ("Project:\t{0}", AmbienceService.EscapeText (type.ContainingAssembly.Name)) + "</span>" + Environment.NewLine +
+									 //							"<span font=\"11\">" + GettextCatalog.GetString ("File:\t\t{0} (line {1})", AmbienceService.EscapeText (relPath), line) + "</span>";
 									 //					}
 				}
-				return (type.ContainingNamespace.IsGlobalNamespace ? "" : "<small>" + GettextCatalog.GetString ("Namespace:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (type.ContainingNamespace.GetFullName ())) + "</small>" + Environment.NewLine) +
-					"<small>" + GettextCatalog.GetString ("Assembly:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (type.ContainingAssembly.Name)) + "</small>";
+				return (type.ContainingNamespace.IsGlobalNamespace ? "" : "<span font=\"11\">" + GettextCatalog.GetString ("Namespace:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (type.ContainingNamespace.GetFullName ())) + "</span>" + Environment.NewLine) +
+					"<span font=\"11\">" + GettextCatalog.GetString ("Assembly:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (type.ContainingAssembly.Name)) + "</span>";
 			}
 
 			if (entity.ContainingType != null && entity.Locations.Any ()) {
@@ -1837,13 +1837,13 @@ namespace MonoDevelop.CSharp
 					//					if (entity.ContainingType.TryGetSourceProject (out project)) {
 					//						var relPath = FileService.AbsoluteToRelativePath (project.BaseDirectory, loc.SourceTree.FilePath);
 					//						var line = loc.SourceTree.GetLineSpan (loc.SourceSpan, true).StartLinePosition.Line;
-					//						return "<small>" + GettextCatalog.GetString ("Project:\t{0}", AmbienceService.EscapeText (project.Name)) + "</small>" + Environment.NewLine +
-					//								"<small>" + GettextCatalog.GetString ("From type:\t{0}", AmbienceService.EscapeText (entity.ContainingType.Name)) + "</small>" + Environment.NewLine +
-					//								"<small>" + GettextCatalog.GetString ("File:\t\t{0} (line {1})", AmbienceService.EscapeText (relPath), line) + "</small>";
+					//						return "<span font=\"11\">" + GettextCatalog.GetString ("Project:\t{0}", AmbienceService.EscapeText (project.Name)) + "</span>" + Environment.NewLine +
+					//							"<span font=\"11\">" + GettextCatalog.GetString ("From type:\t{0}", AmbienceService.EscapeText (entity.ContainingType.Name)) + "</span>" + Environment.NewLine +
+					//							"<span font=\"11\">" + GettextCatalog.GetString ("File:\t\t{0} (line {1})", AmbienceService.EscapeText (relPath), line) + "</span>";
 					//					}
 				}
-				return "<small>" + GettextCatalog.GetString ("From type:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (entity.ContainingType.Name)) + "</small>" + Environment.NewLine +
-					"<small>" + GettextCatalog.GetString ("Assembly:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (entity.ContainingAssembly.Name)) + "</small>";
+				return "<span font=\"11\">" + GettextCatalog.GetString ("From type:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (entity.ContainingType.Name)) + "</span>" + Environment.NewLine +
+					   "<span font=\"11\">" + GettextCatalog.GetString ("Assembly:\t{0}", MonoDevelop.Ide.TypeSystem.Ambience.EscapeText (entity.ContainingAssembly.Name)) + "</span>";
 			}
 			return null;
 		}

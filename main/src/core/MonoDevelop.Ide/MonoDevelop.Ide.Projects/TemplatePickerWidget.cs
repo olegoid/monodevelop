@@ -541,7 +541,7 @@ namespace MonoDevelop.Ide.Projects
 				var item = (TemplateItem) model.GetValue (iter, 0);
 				string name = GLib.Markup.EscapeText (item.Name);
 				if (!string.IsNullOrEmpty (item.Template.LanguageName))
-					name += "\n<span foreground='darkgrey'><small>" + item.Template.LanguageName + "</small></span>";
+					name += "\n<span font=\"11\" foreground=\"darkgrey\">" + item.Template.LanguageName + "</span>";
 				
 				((CellRendererText)cell).Markup = name;
 			}

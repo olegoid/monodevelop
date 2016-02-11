@@ -1130,7 +1130,7 @@ namespace MonoDevelop.DesignerSupport.Toolbox
 					var t = GLib.Markup.EscapeText (node.Name);
 					if (!string.IsNullOrEmpty (node.Source)) {
 						var c = MonoDevelop.Ide.Gui.Styles.DimTextColor.ToHexString ().Substring (0, 7);
-						t += string.Format (" <span size=\"smaller\" color=\"{1}\">{0}</span>", node.Source, c);
+						t += string.Format (" <span font=\"11\" color=\"{1}\">{0}</span>", node.Source, c);
 					}
 					return t;
 				}

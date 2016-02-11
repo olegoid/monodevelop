@@ -130,7 +130,7 @@ namespace MonoDevelop.CSharp.Completion
 
 			public override string GetDisplayDescription (bool isSelected)
 			{
-				return "- <span foreground=\"darkgray\" size='small'>" + description + "</span>";
+				return "- <span font=\"11\" foreground=\"darkgray\"" + description + "</span>";
 			}
 
 			string rightSideDescription = null;
@@ -138,7 +138,7 @@ namespace MonoDevelop.CSharp.Completion
 			{
 				if (rightSideDescription == null) {
 					try {
-						rightSideDescription = "<span size='small'>" + string.Format ("{0:" +format +"}", example) +"</span>";
+						rightSideDescription = "<span font=\"11\">" + string.Format ("{0:" +format +"}", example) +"</span>";
 					} catch (Exception e) {
 						rightSideDescription = "";
 						LoggingService.LogError ("Format error.", e);

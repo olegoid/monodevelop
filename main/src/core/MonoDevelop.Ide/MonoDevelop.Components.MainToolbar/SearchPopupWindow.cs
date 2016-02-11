@@ -1001,7 +1001,7 @@ namespace MonoDevelop.Components.MainToolbar
 			string txt = "<span foreground=\"" + Styles.ColorGetHex (resultFgColor) + "\">" + result.GetMarkupText(selected) +"</span>";
 			string desc = result.GetDescriptionMarkupText ();
 			if (!string.IsNullOrEmpty (desc))
-				txt += "<span foreground=\"" + Styles.ColorGetHex (descFgColor) + "\" size=\"small\">\n" + desc + "</span>";
+				txt += "<span font=\"11\" foreground=\"" + Styles.ColorGetHex (descFgColor) + "\">\n" + desc + "</span>";
 			return txt;
 		}
 	}

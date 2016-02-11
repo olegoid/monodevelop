@@ -355,7 +355,7 @@ namespace MonoDevelop.Debugger
 			ExceptionValueTreeView.ClearValues ();
 
 			ExceptionTypeLabel.Markup = GettextCatalog.GetString ("A <b>{0}</b> was thrown.", exception.Type);
-			ExceptionMessageLabel.Markup = "<small>" + (exception.Message ?? string.Empty) + "</small>";
+			ExceptionMessageLabel.Markup = "<span font=\"11\">" + (exception.Message ?? string.Empty) + "</span>";
 
 			if (!exception.IsEvaluating && exception.Instance != null) {
 				ExceptionValueTreeView.AddValue (exception.Instance);
@@ -508,7 +508,7 @@ namespace MonoDevelop.Debugger
 			var markup = string.Format ("<span foreground='{0}'><b>{1}</b></span>", text_color, GLib.Markup.EscapeText (Frame.DisplayText));
 
 			if (!string.IsNullOrEmpty (Frame.File)) {
-				markup += string.Format ("<span size='4096'>\n\n</span><span size='small' foreground='{0}'>{1}", text_color, GLib.Markup.EscapeText (Frame.File));
+				markup += string.Format ("<span size='4096'>\n\n</span><span font=\"11\" foreground=\"{0}\">{1}", text_color, GLib.Markup.EscapeText (Frame.File));
 				if (Frame.Line > 0) {
 					markup += ":" + Frame.Line;
 					if (Frame.Column > 0)

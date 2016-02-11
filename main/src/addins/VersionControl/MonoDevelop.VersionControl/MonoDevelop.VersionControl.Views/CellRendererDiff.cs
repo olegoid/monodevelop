@@ -361,7 +361,7 @@ namespace MonoDevelop.VersionControl.Views
 			ctx.Stroke ();
 			
 			string text = lines[firstBlock.FirstLine].Replace ("@","").Replace ("-","");
-			text = "<span size='x-small'>" + text.Replace ("+","</span><span size='small'>➜</span><span size='x-small'> ") + "</span>";
+			text = "<span font=\"11\">" + text.Replace ("+","➜") + "</span>";
 			
 			layout.SetText ("");
 			layout.SetMarkup (text);
@@ -384,7 +384,7 @@ namespace MonoDevelop.VersionControl.Views
 		void DrawLineBox (Gdk.GC gc, Cairo.Context ctx, int right, int top, int line, Gtk.Widget widget, Gdk.Drawable window)
 		{
 			layout.SetText ("");
-			layout.SetMarkup ("<small>" + line.ToString () + "</small>");
+			layout.SetMarkup ("<span font=\"11\">" + line.ToString () + "</span>");
 			int tw,th;
 			layout.GetPixelSize (out tw, out th);
 			th--;

@@ -645,7 +645,7 @@ namespace MonoDevelop.Ide
 				}
 				imageTitle.Image = documentList.ActiveItem.Icon;
 				labelFileName.Text = documentList.ActiveItem.Path;
-				labelType.Markup = "<span size=\"small\">" + documentList.ActiveItem.Description + "</span>";
+				labelType.Markup = "<span font=\"11\">" + documentList.ActiveItem.Description + "</span>";
 				labelTitle.Markup = "<span size=\"xx-large\" weight=\"bold\">" + documentList.ActiveItem.Title + "</span>";
 			};
 			

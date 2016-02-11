@@ -360,7 +360,7 @@ namespace MonoDevelop.Components.PropertyGrid
 			Label buttonLabel = new Label ();
 			buttonLabel.UseMarkup = true;
 			buttonLabel.Xpad = 0; buttonLabel.Ypad = 0;
-			buttonLabel.Markup = "<span size=\"small\">...</span>";
+			buttonLabel.Markup = "<span font=\"11\">...</span>";
 			Button dialogueButton = new Button (buttonLabel);
 			dialogueButton.Clicked += DialogueButtonClicked;
 			PackStart (dialogueButton, false, false, 0);

@@ -808,7 +808,7 @@ namespace MonoDevelop.Ide.Projects
 			{
 				string name = GLib.Markup.EscapeText (GettextCatalog.GetString (templateItem.Name));
 				if (!string.IsNullOrEmpty (templateItem.Language))
-					name += "\n<span foreground='darkgrey'><small>" + templateItem.Language + "</small></span>";
+					name += "\n<span font=\"11\" foreground=\"darkgrey\">" + templateItem.Language + "</span>";
 				string icon = templateItem.Template.Icon;
 				templateStore.AppendValues (string.IsNullOrEmpty (icon) ? "md-file-source" : icon, name, templateItem);
 			}

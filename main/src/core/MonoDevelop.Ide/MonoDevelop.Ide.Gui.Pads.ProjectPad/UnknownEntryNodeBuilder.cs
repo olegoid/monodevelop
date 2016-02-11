@@ -62,7 +62,7 @@ namespace MonoDevelop.Ide.Gui.Pads.ProjectPad
 					Context.CacheComposedIcon (nodeInfo.Icon, "fade", gicon);
 				}
 				nodeInfo.Icon = gicon;
-				nodeInfo.Label = GettextCatalog.GetString ("<span foreground='grey'>{0} <span size='small'>(Unavailable)</span></span>", GLib.Markup.EscapeText (entry.Name));
+				nodeInfo.Label = GettextCatalog.GetString ("<span foreground=\"grey\">{0} <span font=\"11\">(Unavailable)</span></span>", GLib.Markup.EscapeText (entry.Name));
 			}
 			else if (entry.LoadError.Length > 0) {
 				nodeInfo.Icon = Context.GetIcon (MonoDevelop.Ide.Gui.Stock.Project).WithAlpha (0.5);

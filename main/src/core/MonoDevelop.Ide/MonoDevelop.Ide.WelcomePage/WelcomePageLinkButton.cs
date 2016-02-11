@@ -36,7 +36,7 @@ namespace MonoDevelop.Ide.WelcomePage
 	{
 		static readonly string linkUnderlinedFormat = "<span underline=\"single\" foreground=\"" + Styles.WelcomeScreen.Links.Color + "\">{0}</span>";
 		static readonly string linkFormat = "<span foreground=\"" + Styles.WelcomeScreen.Links.Color + "\">{0}</span>";
-		static readonly string descFormat = "<span size=\"small\" foreground=\"" + Styles.WelcomeScreen.Pad.TextColor + "\">{0}</span>";
+		static readonly string descFormat = "<span font=\"11\" foreground=\"" + Styles.WelcomeScreen.Pad.TextColor + "\">{0}</span>";
 		
 		Label label;
 		ImageView image;

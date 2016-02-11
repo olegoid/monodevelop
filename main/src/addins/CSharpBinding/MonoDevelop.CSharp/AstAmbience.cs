@@ -183,7 +183,7 @@ namespace MonoDevelop.CSharp
 					if (method.Modifiers.Any (m => m.Kind () == SyntaxKind.PartialKeyword))
 						tag = GettextCatalog.GetString ("(partial)");
 					if (tag != null)
-						sb.Append (" <small>" + tag + "</small>");
+						sb.Append (" <span font=\"11\">" + tag + "</span>");
 				}
 			} else if (e is ConstructorDeclarationSyntax) {
 				var constructor = e as ConstructorDeclarationSyntax;
